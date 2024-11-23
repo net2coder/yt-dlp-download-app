@@ -10,6 +10,7 @@ Before you begin, ensure you have the following installed on your local machine:
 - **Python 3.10 or later**: Required for the backend and handling media downloads.
 - **pip**: Python package manager.
 - **npm**: Node.js package manager.
+- **ffmpeg**: streamline of video & audio  .
 - **Requirements packages**: Upgrade packages only if required .
 
 If you don't have Node.js or Python installed, visit the following pages for installation guides:
