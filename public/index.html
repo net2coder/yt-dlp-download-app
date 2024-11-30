@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saver - Video Downloader</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Saver - Multi-Platform Video Downloader</h1>
+    <form id="downloadForm">
+      <label for="url">Video URL:</label>
+      <input type="text" id="url" name="url" placeholder="Enter video URL" required />
+      
+      <label for="format">Format (optional):</label>
+      <input type="text" id="format" name="format" placeholder="Enter desired format (e.g., mp4)" />
+      
+      <button type="submit">Download Video</button>
+    </form>
+    
+    <div id="statusMessage"></div>
+  </div>
+
+  <script>
+    document.getElementById('downloadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const url = document.getElementById('url').value;
+      const format = document.getElementById('format').value;
+      const statusMessage = document.getElementById('statusMessage');
+      
+      statusMessage.textContent = 'Processing...';
+
+      try {
+        const response = await fetch('/download', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ url, format }),
+        });
+        
+        const data = await response.json();
+        statusMessage.textContent = 'Download started successfully!';
+      } catch (error) {
+        statusMessage.textContent = 'Error downloading video.';
+      }
+    });
+  </script>
+</body>
+</html>
