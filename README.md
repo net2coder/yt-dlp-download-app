@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ## Project Overview
 easy download and access your Content .Supporting Multiple plateforms.
@@ -100,3 +101,7 @@ flask --app main run
 ```
 
 > Pull requests are always welcome. 😁
+=======
+# yt-dlp-download-app
+A simple web-app for downloading yt videos
+>>>>>>> 3a4d07cda2bcdc45d354044929097859cfa12b47
